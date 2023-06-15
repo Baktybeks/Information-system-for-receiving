@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {getTariffsApi} from "../../axios/tariffApi"
 import {setIsAuth} from "../../store/slices/userSlice"
 import {getUsers} from "../../axios/usersApi"
+import logo from "../../img/Logo_group.png"
 
 function Header() {
 
@@ -31,64 +32,34 @@ function Header() {
     }, [dispatch])
 
     return (
-        <header className={classes.head}>
-            <nav className={classes.nav}>
-                <ul className={classes.nav_content}>
-                    <li className={classes.link_nav}>
-                        <Link to={links.base}>Главная</Link>
-                    </li>
-                    <li className={classes.link_nav}>
-                        <Link to={links.contact}>Контакты</Link>
-                    </li>
-                    {/*<li className={classes.link_nav}>*/}
-                    {/*    <Link to={links.signup}>Тарифы для дома</Link>*/}
-                    {/*</li>*/}
-                    {/*<li className={classes.link_nav}>*/}
-                    {/*    <Link to={links.signup}>Тарифы для бизнеса</Link>*/}
-                    {/*</li>*/}
-                </ul>
-                <ul className={classes.nav_content}>
-                    {isAuth
-                        ?
-                        <>
-                            <li className={classes.link_nav}>
-                                {user.login}
+        <header className={classes.container_head}>
+            <div className={classes.head_block}>
+                <div className={classes.logo_img}>
+                    <img src={logo} alt="logo"/>
+                </div>
+                <div className={classes.menu_container}>
+                    <nav className={classes.menu}>
+                        <ul className={classes.menu_block}>
+                            <li>
+                                <a href="#">О нас</a>
                             </li>
                             <li>
-                                <button
-                                    className={classes.btn_nav1}
-                                    onClick={userCabinet}>Кабинет</button>
-                            </li>
-                            {user.role === "ADMIN"
-                                ?
-                                <button
-                                    className={classes.btn_nav1}
-                                    onClick={admin}>Admin</button>
-                                :
-                                ''
-                            }
-                            <li>
-                                <button
-                                    className={classes.btn_nav1}
-                                    onClick={logOut}>Выход</button>
-                            </li>
-                        </>
-                        :
-                        <>
-                            <li>
-                                <Link className={classes.btn_nav1} to={links.signup}>Регистрация</Link>
+                                <a href="#">Вакансии</a>
                             </li>
                             <li>
-                                <Link className={classes.btn_nav3} to={links.login}>Вход</Link>
+                                <a href="#">Стажировки</a>
                             </li>
-                        </>
-                    }
-                    <li>
-                        <Link className={classes.btn_nav2} to={links.pay}>Оплатить</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+                            <li>
+                                <a href="#">Регистрация</a>
+                            </li>
+                            <li>
+                                <a href="#">Войти</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>        
     )
 }
 

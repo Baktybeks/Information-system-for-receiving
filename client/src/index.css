@@ -4,7 +4,10 @@ html {
 }
 
 body {
-  background: #F5F5F5;
+  box-sizing: border-box;
+  font-size: 100%;
+  background: url('./img/back-main.png');
+  background-size: cover;
 }
 
 a {

@@ -1,0 +1,54 @@
+body {
+    box-sizing: border-box;
+    font-size: 100%;
+    background: url('../img/back-modal.png');
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 80rem;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.content-reg {
+    max-width: 25rem;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid #000000;
+}
+
+.content-reg input {
+    padding: 0.7rem;
+}
+
+.btn {
+    color: #000;
+    text-decoration: none;
+    background: linear-gradient(90deg, #FA709A 0%, #FEE140 100%);
+    padding: 1rem 4.5rem;
+}
+
+.btn-title {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #fff;
+}

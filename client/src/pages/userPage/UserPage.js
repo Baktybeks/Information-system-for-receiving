@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import classes from "./userPage.module.css"
-import TariffItem from "../../components/tariffItem/TariffItem"
 import {useDispatch, useSelector} from "react-redux"
 import {useParams} from "react-router-dom"
 import {getUserTariffApi} from "../../axios/tariffApi"
@@ -31,11 +30,6 @@ function UserPage() {
                         </ul>
                     </div>
                     <div className={classes.cart_tarif}>
-                        <ul className={classes.cart_tarif_content}>
-                            {
-                                userTariffs.map(userTariff => <TariffItem key={userTariff.id} tariff={userTariff.tariff}/>)
-                            }
-                        </ul>
                     </div>
                 </div>
             </section>

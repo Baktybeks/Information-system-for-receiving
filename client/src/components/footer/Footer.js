@@ -1,41 +1,51 @@
 import React from 'react'
 import classes from "./footer.module.css"
-import whatsapp from "../../img/wa.png"
+import phone from "../../img/phone.png"
 import telegram from "../../img/telegram.png"
-import vk from "../../img/vk.png"
+import vk from "../../img/icon_vk.png"
+import mail from "../../img/mail.png"
+import marker from "../../img/marker.png"
+
+import youtube from "../../img/icon_youtube.png"
 import viber from "../../img/viber.png"
 
 function Footer() {
     return (
-        <footer className={classes.footer}>
-            <ul className={classes.container_footer}>
-                <li>
-                    <a href="#"><span>О компании</span></a>
-                    <a href="#"><span>Новости</span></a>
-                    <a href="#"><span>Документы</span></a>
-                </li>
-                <li>
-                    <a href="#"><span>Тарифы для дома</span></a>
-                    <a href="#"><span>Тарифы для бизнеса</span></a>
-                    <a href="#"><span>Контакты</span></a>
-                </li>
-                <li>
-                    <a href="#"><span>Тест скорости</span></a>
-                    <a href="#"><span>Карта покрытия</span></a>
-                </li>
-                <li className={classes.btn_img_footer}>
-                    <div className={classes.btn_footer}>
-                        <a className={classes.btn_footer_one} href="../modalApp/index.html">Личный кабинет</a>
-                        <a className={classes.btn_footer_two} href="../modalPay/index.html">Оплатить</a>
-                    </div>
-                    <div className={classes.img_footer}>
-                        <img src={viber} alt="icon"/>
-                        <img src={vk} alt="icon"/>
-                        <img src={whatsapp} alt="icon"/>
-                        <img src={telegram} alt="icon"/>
-                    </div>
-                </li>
-            </ul>
+        <footer className={classes.container_footer}>
+            <div className={classes.block}>
+                <div className={classes.block_connection}>
+                    <p>
+                        <img src={marker} alt="marker"/>
+                        <a href="https://goo.gl/maps/2yFkesLveFCtSByS7" target="_blank">
+                            <span>г. Санкт-Петербург, ул. Всеволода Вишневского, д.12</span>
+                        </a>
+                    </p>
+                    <p>
+                        <img src={mail} alt="mail"/>
+                        <a href="mailto:info@piter-soft.ru">
+                            <span>info@piter-soft.ru</span>
+                        </a>
+                    </p>
+                    <p>
+                        <img src={phone} alt="phone"/>
+                        <a href="tel:78123330860">
+                            <span>+7 (812) 333-08-60</span>
+                        </a>
+                    </p>
+                </div>
+                <div className={classes.block_agreement}>
+                    <p>Пользовательское соглашение</p>
+                    <p>Политика конфиденциальности</p>
+                    <p>Файлы Cookie</p>
+                </div>
+                <div className={classes.block_btn}>
+                    <a href="#" className={classes.btn_bth}><span>Войти</span></a>
+                </div>
+                <div className={classes.block_icon}>
+                    <img src={youtube} alt="icon"/>
+                    <img src={vk} alt="icon"/>
+                </div>
+            </div>
         </footer>
     )
 }
