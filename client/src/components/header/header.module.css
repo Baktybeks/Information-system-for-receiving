@@ -1,13 +1,13 @@
 .container_head {
     max-width: 100%;
     background: #fff;
-    padding: 0rem 5rem;
+    padding: 0 5rem;
 }
 
 .head_block {
     max-width: 90rem;
     margin: 0 auto;
-    padding: 1rem 0rem;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     column-gap: 14rem;
@@ -26,10 +26,10 @@
 .menu_block {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 6.25rem;
+    column-gap: 4rem;
 }
 
-.menu_block li a {
+.menu_block li a, .btn_nav1 {
     font-size: 1rem;
     line-height: 3.9rem;
     letter-spacing: 0.6px;
@@ -39,4 +39,10 @@
 
 .menu_block li a:hover {
     color: #969696;
+}
+
+.btn_nav1 {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
 }

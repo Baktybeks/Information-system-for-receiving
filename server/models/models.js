@@ -9,46 +9,38 @@ const User = sequelize.define('user', {
     role: {type: DataTypes.STRING, defaultValue: "USER"}
 })
 
-const Tariff = sequelize.define('tariff', {
+const Application = sequelize.define('application', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    email: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false},
+})
+
+const Internship = sequelize.define('internship', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     title: {type: DataTypes.STRING, unique: true, allowNull: false},
     description: {type: DataTypes.TEXT, allowNull: false},
-    speed: {type: DataTypes.INTEGER, allowNull: false},
-    price: {type: DataTypes.INTEGER, allowNull: false},
 })
 
-const Payment = sequelize.define('payment', {
+const Job = sequelize.define('job', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    amount: {type: DataTypes.STRING, allowNull: false},
+    title: {type: DataTypes.STRING, unique: true, allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false},
+    Requirement: {type: DataTypes.TEXT, allowNull: false},
+    responsibility: {type: DataTypes.TEXT, allowNull: false},
+    offer: {type: DataTypes.TEXT, allowNull: false}
 })
 
-const UserTariff = sequelize.define('user_tariff', {
+const UserInternship = sequelize.define('user_internship', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    status: {type: DataTypes.STRING, allowNull: false}
 })
 
-const Application = sequelize.define('application', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    description: {type: DataTypes.STRING, allowNull: false}
-})
+Internship.hasMany(UserInternship, { onDelete: 'RESTRICT' })
+UserInternship.belongsTo(Internship, { onDelete: 'RESTRICT' })
 
-Tariff.hasMany(UserTariff)
-UserTariff.belongsTo(Tariff)
-
-User.hasMany(UserTariff)
-UserTariff.belongsTo(User)
-
-User.hasMany(Payment)
-Payment.belongsTo(User)
-
-User.hasMany(Application)
-Application.belongsTo(User)
+User.hasMany(UserInternship, { onDelete: 'RESTRICT' })
+UserInternship.belongsTo(User, { onDelete: 'RESTRICT' })
 
 module.exports = {
-    Tariff, User, UserTariff, Payment, Application
+    Internship, User, Job, Application, UserInternship
 }
-
-
-
-
-

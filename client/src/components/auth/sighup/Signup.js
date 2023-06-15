@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import classes from "./signup.module.css"
-import close from "../../../img/x.png"
 import {links} from "../../../links/links"
-import {Link, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import {useDispatch} from "react-redux"
 import {register} from "../../../axios/usersApi"
 
@@ -36,44 +35,39 @@ function Signup() {
     }
 
     return (
-        <form
-            className={classes.container_modal}
-            onSubmit={submitRegHandler}
-        >
-            <div className={classes.block_head}>
-                <h2 className={classes.head_modal}>Регистрация</h2>
-                <Link to={links.base}><img src={close} alt="close"/></Link>
-            </div>
-            <input
-                className={classes.login}
-                type="text"
-                name="login"
-                placeholder="login"
-                value={login}
-                onChange={e => setLogin(e.target.value)}
-            />
-            <input
-                className={classes.email}
-                type="email"
-                name="email"
-                placeholder="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-            />
-            <input
-                className={classes.password}
-                type="password"
-                name="password"
-                placeholder="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-            />
-            <button
-                className={classes.btn}
-                type="submit">
-                <span>зарегистрироваться</span>
-            </button>
-        </form>
+        <div className={classes.container}>
+            <form
+                className={classes.content_reg}
+                onSubmit={submitRegHandler}
+            >
+                <input
+                    type="text"
+                    name="login"
+                    placeholder="Логин"
+                    value={login}
+                    onChange={e => setLogin(e.target.value)}
+                />
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Пароль"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+                <button
+                    className={classes.btn}
+                    type="submit">
+                    <span>зарегистрироваться</span>
+                </button>
+            </form>
+        </div>
     )
 }
 

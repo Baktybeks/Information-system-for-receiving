@@ -4,14 +4,20 @@ import {Navigate} from "react-router-dom"
 import MainPage from "../pages/mainPage/MainPage"
 import Signup from "../components/auth/sighup/Signup"
 import Login from "../components/auth/login/Login"
-import TariffPage from "../pages/tarifPage/TariffPage"
 import UserPage from "../pages/userPage/UserPage"
 import AdminPage from "../pages/adminPage/AdminPage"
+import InternshipPage from "../pages/internshipPage/InternshipPage"
+import JobsPage from "../pages/JobsPage/JobsPage"
+import AboutPage from "../pages/aboutPage/AboutPage"
 
 export const authRoutes = [
     {
         path: links.admin,
         element: <AdminPage/>
+    },
+    {
+        path: links.user + '/:id/',
+        element: <UserPage/>
     },
 ]
 
@@ -29,12 +35,16 @@ export const publicRoutes = [
         element: <Login/>
     },
     {
-        path: links.user + '/:id/',
-        element: <UserPage/>
+        path: links.internship,
+        element: <InternshipPage/>
     },
     {
-        path: links.tariff + '/:id/',
-        element: <TariffPage/>
+        path: links.job,
+        element: <JobsPage/>
+    },
+    {
+        path: links.about,
+        element: <AboutPage/>
     },
     {
         path: '*',
